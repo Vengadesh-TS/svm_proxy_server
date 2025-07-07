@@ -1,7 +1,9 @@
 import requests
 from flask import request, Response, jsonify
+from flask_cors import CORS
 
 def register_routes(app):
+    CORS(app)  # or CORS(app, origins=["http://localhost:3000"])
 
     @app.route('/', methods=['GET'])
     def welcome():
